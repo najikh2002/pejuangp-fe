@@ -5,9 +5,9 @@
         <b-row class="mt-2">
           <b-col md="1" class="text-center">
             <b-img
-              src="https://cdn.jsdelivr.net/gh/maulayyacyber/assets-images-ebooks/cms-nuxt-laravel-11/xKOCz0P.png"
+              src="../../public/img/logo.svg"
               rounded="circle"
-              width="70"
+              width="60"
             ></b-img>
           </b-col>
           <b-col md="11">
