@@ -24,9 +24,12 @@
           <h5>KONTAK</h5>
           <hr />
           <p>
-            <i aria-hidden="true" class="fa fa-map-marker"></i> Jl. Jendral
-            Sudirman No.83, Daerah Khusus Ibukota Jakarta, Indonesia
-            <br /><br /><i class="fas fa-phone"></i> +62857-8585-2224
+            <i aria-hidden="true" class="fa fa-map-marker"></i> Jl. Laksda
+            Adisucipto, Papringan, Caturtunggal, Kec. Depok, Kabupaten Sleman,
+            Daerah Istimewa Yogyakarta 55281 <br /><br /><i
+              class="fas fa-phone"
+            ></i>
+            +62812-1692-1233
           </p>
         </b-col>
       </b-row>
