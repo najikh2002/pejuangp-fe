@@ -20,7 +20,7 @@
           </div>
           <h5>
             <nuxt-link
-              :to="{ name: 'tag-slug', params: { slug: post.slug } }"
+              :to="{ name: 'post-slug', params: { slug: post.slug } }"
               >{{ post.title }}</nuxt-link
             >
           </h5>
