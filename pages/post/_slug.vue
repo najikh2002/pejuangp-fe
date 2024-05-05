@@ -264,11 +264,4 @@ export default {
 };
 </script>
 
-<style>
-code {
-  font-family: "Courier New", Courier, monospace;
-  background-color: #f0f0f0;
-  padding: 2px 4px;
-  border-radius: 4px;
-}
-</style>
+<style></style>

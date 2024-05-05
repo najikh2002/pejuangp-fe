@@ -173,13 +173,6 @@ export default {
       // config CKEDITOR
       editorConfig: {
         removePlugin: ["Title"],
-        toolbar: [
-          { name: "basicstyles", items: ["Bold", "Italic", "Underline"] },
-          { name: "styles", items: ["Format"] },
-          { name: "list", items: ["NumberedList", "BulletedList"] },
-          { name: "links", items: ["Link", "Unlink"] },
-          { name: "document", items: ["Source"] },
-        ],
         simpleUpload: {
           uploadUrl:
             "https://pejuangpemrogaman.appdev.my.id/api/web/posts/store-image",
