@@ -21,7 +21,7 @@
               {{ post.comments.length }} Komentar</small
             >
           </b-card-text>
-          <div v-html="post.content"></div>
+          <div v-html="post.content" class="post-content"></div>
           <hr />
           <nuxt-link
             :to="{ name: 'tag-slug', params: { slug: tag.slug } }"
@@ -264,4 +264,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.post-content img {
+  max-width: 100%; /* Maksimum lebar gambar */
+  height: auto; /* Tinggi otomatis agar gambar tetap proporsional */
+}
+</style>
