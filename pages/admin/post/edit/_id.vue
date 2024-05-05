@@ -217,7 +217,7 @@ export default {
     handleFileChange(e) {
       let image = (this.post.image = e.target.files[0]);
 
-      if (image.type.match("image.*")) {
+      if (!image.type.match("image.*")) {
         e.target.value = "";
 
         this.post.image = null;
