@@ -5,7 +5,7 @@
         <b-row class="mt-2">
           <b-col md="1" class="text-center">
             <b-img
-              src="../../public/img/logo.svg"
+              src="../../public/img/logo.png"
               rounded="circle"
               width="70"
             ></b-img>
