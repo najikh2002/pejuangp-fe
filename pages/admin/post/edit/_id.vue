@@ -174,7 +174,8 @@ export default {
       editorConfig: {
         removePlugin: ["Title"],
         simpleUpload: {
-          uploadUrl: "http://localhost:8000/api/web/posts/storeImage",
+          uploadUrl:
+            "https://pejuangpemrogaman.appdev.my.id/api/web/posts/storeImage",
         },
       },
     };
