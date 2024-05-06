@@ -7,6 +7,7 @@
             <b-img
               src="../../public/img/logo.png"
               rounded="circle"
+              alt="logo image"
               width="70"
             ></b-img>
           </b-col>
