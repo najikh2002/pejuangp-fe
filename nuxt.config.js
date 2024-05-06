@@ -1,3 +1,5 @@
+const axios = require('axios')
+
 export default {
   // Target Deployment
   target: 'server',
@@ -20,15 +22,10 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    script: [{
-        src: '/js/jquery/jquery.min.js'
-      },
-      {
-          src: '/js/bootstrap/js/bootstrap.bundle.min.js'
-      },
-      {
-          src: '/js/adminlte.min.js'
-      },
+    script: [
+      { src: '/js/jquery/jquery.min.js' },
+      { src: '/js/bootstrap/js/bootstrap.bundle.min.js' },
+      { src: '/js/adminlte.min.js' },
     ]
   },
 
@@ -39,16 +36,13 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    //'@nuxt/typescript-build' // Disable TypeScript
-  ],
+  buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -63,44 +57,87 @@ export default {
     //https://github.com/avil13/vue-sweetalert2
     'vue-sweetalert2/nuxt',
     // Simple Usage
-    ['nuxt-highlightjs', {
-      style: 'obsidian'
-    }]
+    ['nuxt-highlightjs', { style: 'obsidian' }],
+    // sitemap
+    // '@funken-studio/sitemap-nuxt-3',
+    '@nuxtjs/sitemap'
   ],
+
+  // Sitemap Configuration
+  sitemap: {
+    hostname: 'http://localhost:3000',
+    cacheTime: 1,
+    exclude: [
+      '/admin/**',
+      '/login'
+    ],
+    routes: async() => {
+      let page = 1;
+      let routes = ['/'];
+      let hasMoreData = true;
+      while (hasMoreData) {
+        try {
+          let response = await axios.get(`https://pejuangpemrogaman.appdev.my.id/api/web/posts?page=${page}`);
+          let data = response.data.data.data;
+
+          if (data.length === 0) {
+            hasMoreData = false;
+            break;
+          }
+
+          data.forEach(post => {
+            routes.push(`/post/${post.slug}`);
+          });
+        } catch(error) {
+          console.error(error);
+        }
+
+        return routes;
+      }
+
+
+    },
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date(),
+    },
+  },
+
 
   auth: {
     strategies: {
-        local: {
-            token: {
-                property: 'token',
-                required: true,
-                type: 'Bearer'
-            },
-            user: {
-                property: 'user',
-                // autoFetch: true
-            },
-            endpoints: {
-                login: {
-                    url: '/api/admin/login',
-                    method: 'post'
-                },
-                logout: {
-                    url: '/api/admin/logout',
-                    method: 'post'
-                },
-                user: {
-                    url: '/api/admin/user',
-                    method: 'get'
-                }
-            }
+      local: {
+        token: {
+          property: 'token',
+          required: true,
+          type: 'Bearer'
+        },
+        user: {
+          property: 'user',
+          // autoFetch: true
+        },
+        endpoints: {
+          login: {
+            url: '/api/admin/login',
+            method: 'post'
+          },
+          logout: {
+            url: '/api/admin/logout',
+            method: 'post'
+          },
+          user: {
+            url: '/api/admin/user',
+            method: 'get'
+          }
         }
+      }
     },
     redirect: {
-        login: '/login',
-        logout: '/login',
-        callback: '/login',
-        home: '/admin/dashboard'
+      login: '/login',
+      logout: '/login',
+      callback: '/login',
+      home: '/admin/dashboard'
     }
   },
 
@@ -112,5 +149,5 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
 }

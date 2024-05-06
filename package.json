@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@blowstack/ckeditor-nuxt": "^0.6.0",
+    "@funken-studio/sitemap-nuxt-3": "^4.0.4",
     "@nuxtjs/auth-next": "^5.0.0-1648802546.c9880dc",
     "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.2",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.25.3",
