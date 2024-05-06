@@ -121,6 +121,12 @@ export default {
         "PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
       meta: [
         {
+          hid: "description",
+          name: "description",
+          content:
+            "Belajar koding bahasa indonesia terlengkap dan mudah dipahami.",
+        },
+        {
           hid: "og:title",
           name: "og:title",
           content:

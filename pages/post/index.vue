@@ -49,6 +49,11 @@ export default {
         "Posts - PejuangPemrogaman.com - Belajar Koding Lengkap Bahasa Indonesia",
       meta: [
         {
+          hid: "description",
+          name: "description",
+          content: "Daftar konten terbaru blog PejuangPemrogaman.com",
+        },
+        {
           hid: "og:title",
           name: "og:title",
           content:

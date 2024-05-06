@@ -196,6 +196,11 @@ export default {
       title: this.post.title,
       meta: [
         {
+          hid: "description",
+          name: "description",
+          content: this.post.description,
+        },
+        {
           hid: "og:title",
           name: "og:title",
           content: this.post.title,
