@@ -29,6 +29,7 @@
             v-html="post.content"
             class="post-content"
             v-add-alt-to-images
+            v-highlight
           ></div>
           <hr />
           <nuxt-link

@@ -62,6 +62,10 @@ export default {
     'nuxt-multiselect',
     //https://github.com/avil13/vue-sweetalert2
     'vue-sweetalert2/nuxt',
+    // Simple Usage
+    ['nuxt-highlightjs', {
+      style: 'obsidian'
+    }]
   ],
 
   auth: {
