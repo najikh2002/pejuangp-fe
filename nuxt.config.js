@@ -65,7 +65,7 @@ export default {
 
   // Sitemap Configuration
   sitemap: {
-    hostname: 'http://localhost:3000',
+    hostname: 'https://pejuangpemrogaman.com',
     cacheTime: 1,
     exclude: [
       '/admin/**',
