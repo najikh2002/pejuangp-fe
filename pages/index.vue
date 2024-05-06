@@ -16,6 +16,7 @@
               <b-col md="4">
                 <b-img
                   :src="post.image"
+                  :alt="post.title"
                   class="w-100 img-post h-100 object-fit-cover"
                   rounded="left"
                 ></b-img>
@@ -67,7 +68,11 @@
                 :key="category.id"
               >
                 <b-card-body class="p-2 fw-normal">
-                  <b-img :src="category.image" width="40"></b-img>
+                  <b-img
+                    :src="category.image"
+                    :alt="category.name"
+                    width="40"
+                  ></b-img>
                   <nuxt-link
                     :to="{
                       name: 'category-slug',

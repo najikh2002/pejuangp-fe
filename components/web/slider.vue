@@ -13,6 +13,7 @@
           v-for="slider in sliders"
           :key="slider.id"
           :img-src="slider.image"
+          img-alt="slider image"
         ></b-carousel-slide>
       </b-carousel>
     </b-container>

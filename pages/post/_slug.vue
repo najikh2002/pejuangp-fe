@@ -3,7 +3,11 @@
     <b-row>
       <b-col md="8" sm="12">
         <b-card class="border-0 rounded-lg shadow-md mb-3">
-          <b-img :src="post.image" class="rounded-lg w-100"></b-img>
+          <b-img
+            :src="post.image"
+            :alt="post.title"
+            class="rounded-lg w-100"
+          ></b-img>
           <hr />
           <h4>{{ post.title }}</h4>
           <b-card-text>
@@ -21,7 +25,11 @@
               {{ post.comments.length }} Komentar</small
             >
           </b-card-text>
-          <div v-html="post.content" class="post-content"></div>
+          <div
+            v-html="post.content"
+            class="post-content"
+            v-add-alt-to-images
+          ></div>
           <hr />
           <nuxt-link
             :to="{ name: 'tag-slug', params: { slug: tag.slug } }"
@@ -145,7 +153,11 @@
               :key="category.id"
             >
               <b-card-body class="p-2 fw-normal">
-                <b-img :src="category.image" width="40"></b-img>
+                <b-img
+                  :src="category.image"
+                  :alt="category.name"
+                  width="40"
+                ></b-img>
                 <nuxt-link
                   :to="{
                     name: 'category-slug',
@@ -228,6 +240,17 @@ export default {
 
       validation: [],
     };
+  },
+
+  directives: {
+    "add-alt-to-images": {
+      inserted: function (el) {
+        const images = el.querySelectorAll("img");
+        images.forEach((img) => {
+          img.setAttribute("alt", "Image Content");
+        });
+      },
+    },
   },
 
   methods: {

@@ -4,6 +4,7 @@
       <b-col md="5" class="mb-3" sm="12" v-for="post in posts" :key="post.id">
         <b-card
           :img-src="post.image"
+          img-alt="Post Image"
           img-top
           tag="article"
           class="mb-2 h-100 rounded-lg"
