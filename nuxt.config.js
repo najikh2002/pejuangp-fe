@@ -60,8 +60,16 @@ export default {
     ['nuxt-highlightjs', { style: 'obsidian' }],
     // sitemap
     // '@funken-studio/sitemap-nuxt-3',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    // simple robots.txt
+    // 'nuxt-simple-robots'
+    '@nuxtjs/robots'
   ],
+
+  robots: {
+    userAgent: '*',
+    allow: '/'
+  },
 
   // Sitemap Configuration
   sitemap: {
