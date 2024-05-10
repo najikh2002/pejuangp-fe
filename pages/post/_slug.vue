@@ -197,11 +197,6 @@ export default {
       title: this.post.title,
       meta: [
         {
-          hid: "description",
-          name: "description",
-          content: this.post.description,
-        },
-        {
           hid: "og:title",
           name: "og:title",
           content: this.post.title,
@@ -209,7 +204,8 @@ export default {
         {
           hid: "og:site_name",
           name: "og:site_name",
-          content: this.post.title,
+          content:
+            "PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
         },
         {
           hid: "og:image",
