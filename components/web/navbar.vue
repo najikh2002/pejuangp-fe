@@ -12,7 +12,7 @@
             ></b-img>
           </b-col>
           <b-col md="11">
-            <h3 class="font-weight-bold">PEJUANG PEMROGRRAMAN</h3>
+            <h3 class="font-weight-bold">PEJUANG PEMROGRAMAN</h3>
             <p>Belajar Koding Lengkap Bahasa Indonesia.</p>
           </b-col>
         </b-row>
