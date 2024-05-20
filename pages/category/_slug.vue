@@ -43,7 +43,7 @@ export default {
     return {
       title:
         this.category.name +
-        " - PejuangPemrogaman.com - Belajar Koding Lengkap Bahasa Indonesia",
+        " - PejuangPemrograman.com - Belajar Koding Lengkap Bahasa Indonesia",
       meta: [
         {
           hid: "og:title",

@@ -82,7 +82,7 @@ export default {
   head() {
     return {
       title:
-        "Tambah Category - PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
+        "Tambah Category - PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
     };
   },
 

@@ -93,7 +93,7 @@ export default {
   head() {
     return {
       title:
-        "Edit User - PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Lengkap",
+        "Edit User - PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Lengkap",
     };
   },
   data() {

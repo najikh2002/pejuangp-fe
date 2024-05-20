@@ -88,7 +88,7 @@ export default {
   head() {
     return {
       title:
-        "Sliders - PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
+        "Sliders - PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
     };
   },
 

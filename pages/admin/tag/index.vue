@@ -105,7 +105,7 @@ export default {
   head() {
     return {
       title:
-        "Tags - PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
+        "Tags - PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
     };
   },
 

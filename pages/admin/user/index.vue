@@ -104,7 +104,7 @@ export default {
   head() {
     return {
       title:
-        "Users - PejuangPemrogaman - Belajar Koding Lengkap Bahasa Indonesia",
+        "Users - PejuangPemrograman - Belajar Koding Lengkap Bahasa Indonesia",
     };
   },
   data() {

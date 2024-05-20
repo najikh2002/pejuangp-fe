@@ -96,7 +96,7 @@ export default {
   head() {
     return {
       title:
-        "Tambah User - PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Lengkap",
+        "Tambah User - PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Lengkap",
     };
   },
   data() {

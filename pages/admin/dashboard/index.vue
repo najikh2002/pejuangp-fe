@@ -68,7 +68,7 @@ export default {
   head() {
     return {
       title:
-        "Dashboard - HizzDev.com - Belajar Koding Bahasa Indonesia Terlengkap",
+        "Dashboard - PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
     };
   },
 

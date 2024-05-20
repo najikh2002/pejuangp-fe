@@ -46,24 +46,24 @@ export default {
   head() {
     return {
       title:
-        "Posts - PejuangPemrogaman.com - Belajar Koding Lengkap Bahasa Indonesia",
+        "Posts - PejuangPemrograman.com - Belajar Koding Lengkap Bahasa Indonesia",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "Daftar konten terbaru blog PejuangPemrogaman.com",
+          content: "Daftar konten terbaru blog PejuangPemrograman.com",
         },
         {
           hid: "og:title",
           name: "og:title",
           content:
-            "PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
+            "PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
         },
         {
           hid: "og:site_name",
           name: "og:site_name",
           content:
-            "PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
+            "PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
         },
         {
           hid: "og:image",

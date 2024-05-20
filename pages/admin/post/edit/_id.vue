@@ -175,7 +175,7 @@ export default {
         removePlugin: ["Title"],
         simpleUpload: {
           uploadUrl:
-            "https://pejuangpemrogaman.appdev.my.id/api/web/posts/store-image",
+            "https://pejuangpemrograman.appdev.my.id/api/web/posts/store-image",
         },
       },
     };

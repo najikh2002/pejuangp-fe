@@ -37,7 +37,7 @@
     <b-container fluid class="footer-bottom">
       <b-row class="p-3 justify-content-center">
         <div class="text-white font-weight-bold">
-          © 2024 Pejuang Pemrogaman ❤️
+          © 2024 Pejuang Pemrograman ❤️
         </div>
       </b-row>
     </b-container>

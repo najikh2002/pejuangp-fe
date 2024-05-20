@@ -69,7 +69,7 @@ export default {
   head() {
     return {
       title:
-        "Tambah Tags - PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
+        "Tambah Tags - PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
     };
   },
 

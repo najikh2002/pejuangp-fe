@@ -77,7 +77,7 @@ export default {
   head() {
     return {
       title:
-        "Editx Menu - PejuangPemrogaman.com - Belajar Koding Lengkap Bahasa Indonesia",
+        "Editx Menu - PejuangPemrograman.com - Belajar Koding Lengkap Bahasa Indonesia",
     };
   },
   data() {

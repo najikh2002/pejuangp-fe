@@ -53,7 +53,7 @@ export default {
   head() {
     return {
       title:
-        "Login - PejuangPemrogaman.com - Belajar Bahasa Pemrogaman Bahasa Indonesia Lengkap",
+        "Login - PejuangPemrograman.com - Belajar Bahasa Pemrogaman Bahasa Indonesia Lengkap",
     };
   },
 

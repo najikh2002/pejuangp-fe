@@ -107,7 +107,7 @@ export default {
   head() {
     return {
       title:
-        "Menus - PejuangPemrogaman.com - Belajar Koding Lengkap Bahasa Indonesia",
+        "Menus - PejuangPemrograman.com - Belajar Koding Lengkap Bahasa Indonesia",
     };
   },
   data() {

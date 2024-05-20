@@ -64,7 +64,7 @@ export default {
   head() {
     return {
       title:
-        "Tambah Slider - PejuangPemrogaman.com - Belajar Koding Lengkap Bahasa Indonesia",
+        "Tambah Slider - PejuangPemrograman.com - Belajar Koding Lengkap Bahasa Indonesia",
     };
   },
   data() {

@@ -118,7 +118,7 @@ export default {
   head() {
     return {
       title:
-        "PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
+        "PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
       meta: [
         {
           hid: "description",
@@ -130,13 +130,13 @@ export default {
           hid: "og:title",
           name: "og:title",
           content:
-            "PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
+            "PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
         },
         {
           hid: "og:site_name",
           name: "og:site_name",
           content:
-            "PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Terlengkap",
+            "PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
         },
         {
           hid: "og:image",

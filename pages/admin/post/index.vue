@@ -113,7 +113,7 @@ export default {
   head() {
     return {
       title:
-        "Posts - PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Lengkap",
+        "Posts - PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Lengkap",
     };
   },
 

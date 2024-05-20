@@ -139,7 +139,7 @@ export default {
   head() {
     return {
       title:
-        "Tambah Post - PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Lengkap",
+        "Tambah Post - PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Lengkap",
     };
   },
 

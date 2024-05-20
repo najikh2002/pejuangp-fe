@@ -66,7 +66,8 @@ export default {
   // title head
   head() {
     return {
-      title: "Edit Tag - HizzDev.com - Belajar Koding Lengkap Bahasa Indonesia",
+      title:
+        "Edit Tag - PejuangPemrograman.com - Belajar Koding Lengkap Bahasa Indonesia",
     };
   },
 

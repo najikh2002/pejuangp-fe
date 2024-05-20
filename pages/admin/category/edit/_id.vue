@@ -77,7 +77,7 @@ export default {
   head() {
     return {
       title:
-        "Edit Category - PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Lengkap",
+        "Edit Category - PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Lengkap",
     };
   },
 

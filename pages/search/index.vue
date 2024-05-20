@@ -52,19 +52,19 @@ export default {
   head() {
     return {
       title:
-        "Search - PejuangPemrogaman.com - Belajar Koding Lengkap Bahasa Indonesia",
+        "Search - PejuangPemrograman.com - Belajar Koding Lengkap Bahasa Indonesia",
       meta: [
         {
           hid: "og:title",
           name: "og:title",
           content:
-            "PejuangPemrogaman.com - Belajar Koding Bahasa Indonesia Lengkap",
+            "PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Lengkap",
         },
         {
           hid: "og:site_name",
           name: "og:site_name",
           content:
-            "PejuangPemrogaman.com - Belajar Koding Lengkap Bahasa Indonesia",
+            "PejuangPemrograman.com - Belajar Koding Lengkap Bahasa Indonesia",
         },
         {
           hid: "og:image",
