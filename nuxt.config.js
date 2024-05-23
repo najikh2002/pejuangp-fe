@@ -73,7 +73,7 @@ export default {
 
   // Sitemap Configuration
   sitemap: {
-    hostname: 'https://pejuangpemrograman.com',
+    hostname: 'https://www.pejuangpemrograman.com',
     cacheTime: 1,
     exclude: [
       '/admin/**',
