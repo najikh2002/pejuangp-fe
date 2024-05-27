@@ -26,6 +26,7 @@
                   <h5>
                     <nuxt-link
                       :to="{ name: 'post-slug', params: { slug: post.slug } }"
+                      class="text"
                       >{{ post.title }}</nuxt-link
                     >
                   </h5>
@@ -113,7 +114,6 @@ export default {
   components: {
     Slider,
   },
-
   //meta
   head() {
     return {
