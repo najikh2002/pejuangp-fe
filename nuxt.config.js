@@ -63,7 +63,11 @@ export default {
     '@nuxtjs/sitemap',
     // simple robots.txt
     // 'nuxt-simple-robots'
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    // google tag manager
+    '@nuxtjs/gtm',
+    // google analytic
+    '@nuxtjs/google-analytics',
   ],
 
   robots: {
@@ -112,6 +116,13 @@ export default {
     },
   },
 
+  gtm: {
+    id: "G-LPQW2T7W2D"
+  },
+
+  googleAnalytics: {
+    id: 'G-LPQW2T7W2D',
+  },
 
   auth: {
     strategies: {
