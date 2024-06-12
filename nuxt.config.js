@@ -56,7 +56,9 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/google-analytics.js', mode: 'client' }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -132,9 +134,7 @@ export default {
   },
 
   gtm: {
-    id: 'GTM-N8TSDW59', // Ganti dengan ID GTM Anda jika menggunakan GTM
-    enabled: true,
-    debug: true
+    id: 'GTM-N8TSDW59',
   },
 
   auth: {
