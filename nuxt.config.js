@@ -13,6 +13,31 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
+    script: [
+      // GA4 Script
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-LPQW2T7W2D',
+        async: true
+      },
+      {
+        hid: 'gtag',
+        innerHTML: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LPQW2T7W2D');
+        `,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      },
+      // Other Scripts
+      { src: '/js/jquery/jquery.min.js' },
+      { src: '/js/bootstrap/js/bootstrap.bundle.min.js' },
+      { src: '/js/adminlte.min.js' }
+    ],
+    __dangerouslyDisableSanitizersByTagID: {
+      gtag: ['innerHTML']
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,18 +46,13 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [
-      { src: '/js/jquery/jquery.min.js' },
-      { src: '/js/bootstrap/js/bootstrap.bundle.min.js' },
-      { src: '/js/adminlte.min.js' },
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/fontawesome-free/css/all.min.css',
-    '@/assets/css/adminlte.min.css',
+    '@/assets/css/adminlte.min.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -52,22 +72,18 @@ export default {
     '@nuxtjs/axios',
     // https://auth.nuxtjs.org/
     '@nuxtjs/auth-next',
-    //https://github.com/maulayyacyber/nuxt-vue-multiselect
+    // https://github.com/maulayyacyber/nuxt-vue-multiselect
     'nuxt-multiselect',
-    //https://github.com/avil13/vue-sweetalert2
+    // https://github.com/avil13/vue-sweetalert2
     'vue-sweetalert2/nuxt',
     // Simple Usage
     ['nuxt-highlightjs', { style: 'obsidian' }],
     // sitemap
-    // '@funken-studio/sitemap-nuxt-3',
     '@nuxtjs/sitemap',
     // simple robots.txt
-    // 'nuxt-simple-robots'
     '@nuxtjs/robots',
     // google tag manager
-    '@nuxtjs/gtm',
-    // google analytic
-    '@nuxtjs/google-analytics',
+    '@nuxtjs/gtm'
   ],
 
   robots: {
@@ -83,7 +99,7 @@ export default {
       '/admin/**',
       '/login'
     ],
-    routes: async() => {
+    routes: async () => {
       let page = 1;
       let routes = ['/'];
       let hasMoreData = true;
@@ -100,28 +116,25 @@ export default {
           data.forEach(post => {
             routes.push(`/post/${post.slug}`);
           });
-        } catch(error) {
+        } catch (error) {
           console.error(error);
         }
 
-        return routes;
+        page++;
       }
-
-
+      return routes;
     },
     defaults: {
       changefreq: 'daily',
       priority: 1,
-      lastmod: new Date(),
-    },
+      lastmod: new Date()
+    }
   },
 
   gtm: {
-    id: "G-LPQW2T7W2D"
-  },
-
-  googleAnalytics: {
-    id: 'G-LPQW2T7W2D',
+    id: 'GTM-N8TSDW59', // Ganti dengan ID GTM Anda jika menggunakan GTM
+    enabled: true,
+    debug: true
   },
 
   auth: {
@@ -133,22 +146,12 @@ export default {
           type: 'Bearer'
         },
         user: {
-          property: 'user',
-          // autoFetch: true
+          property: 'user'
         },
         endpoints: {
-          login: {
-            url: '/api/admin/login',
-            method: 'post'
-          },
-          logout: {
-            url: '/api/admin/logout',
-            method: 'post'
-          },
-          user: {
-            url: '/api/admin/user',
-            method: 'get'
-          }
+          login: { url: '/api/admin/login', method: 'post' },
+          logout: { url: '/api/admin/logout', method: 'post' },
+          user: { url: '/api/admin/user', method: 'get' }
         }
       }
     },
@@ -162,11 +165,9 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'https://pejuangpemrogaman.appdev.my.id',
+    baseURL: 'https://pejuangpemrogaman.appdev.my.id'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {}
 }
