@@ -14,7 +14,6 @@ export default {
       lang: 'en'
     },
     script: [
-      // GA4 Script
       {
         src: 'https://www.googletagmanager.com/gtag/js?id=G-LPQW2T7W2D',
         async: true
@@ -85,7 +84,9 @@ export default {
     // simple robots.txt
     '@nuxtjs/robots',
     // google tag manager
-    '@nuxtjs/gtm'
+    '@nuxtjs/gtm',
+    // nuxtImage
+    '@nuxt/image'
   ],
 
   robots: {

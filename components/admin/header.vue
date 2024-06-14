@@ -28,12 +28,14 @@
           aria-expanded="false"
           class="nav-link dropdown-toggle"
         >
-          <img
+          <nuxt-img
             :src="`https://ui-avatars.com/api/?name=${user.name}&amp;background=4e73df&amp;color=ffffff&amp;size=100`"
             class="img-circle"
             style="opacity: 0.8"
             width="35"
             height="35"
+            loading="lazy"
+            preload
           />
           {{ user.name }}
         </a>

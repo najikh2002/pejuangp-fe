@@ -14,12 +14,13 @@
           >
             <b-row class="g-0">
               <b-col md="4">
-                <b-img
+                <nuxt-img
                   :src="post.image"
                   :alt="post.title"
                   class="w-100 img-post h-100 object-fit-cover"
                   rounded="left"
-                ></b-img>
+                  loading="lazy"
+                />
               </b-col>
               <b-col md="8">
                 <b-card-body>
@@ -69,11 +70,12 @@
                 :key="category.id"
               >
                 <b-card-body class="p-2 fw-normal">
-                  <b-img
+                  <nuxt-img
                     :src="category.image"
                     :alt="category.name"
                     width="40"
-                  ></b-img>
+                    loading="lazy"
+                  ></nuxt-img>
                   <nuxt-link
                     :to="{
                       name: 'category-slug',

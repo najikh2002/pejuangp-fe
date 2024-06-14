@@ -3,11 +3,12 @@
     <b-row>
       <b-col md="8" sm="12">
         <b-card class="border-0 rounded-lg shadow-md mb-3">
-          <b-img
+          <nuxt-img
             :src="post.image"
             :alt="post.title"
             class="rounded-lg w-100"
-          ></b-img>
+            loading="lazy"
+          ></nuxt-img>
           <hr />
           <h4>{{ post.title }}</h4>
           <b-card-text>
