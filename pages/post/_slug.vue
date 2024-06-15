@@ -205,8 +205,7 @@ export default {
         {
           hid: "og:site_name",
           name: "og:site_name",
-          content:
-            "PejuangPemrograman.com - Belajar Koding Bahasa Indonesia Terlengkap",
+          content: this.post.title,
         },
         {
           hid: "og:image",
