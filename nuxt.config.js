@@ -30,9 +30,9 @@ export default {
         charset: 'utf-8'
       },
       // Other Scripts
-      { src: '/js/jquery/jquery.min.js' },
-      { src: '/js/bootstrap/js/bootstrap.bundle.min.js' },
-      { src: '/js/adminlte.min.js' }
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js', async: true }
     ],
     __dangerouslyDisableSanitizersByTagID: {
       gtag: ['innerHTML']
