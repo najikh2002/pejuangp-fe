@@ -30,9 +30,9 @@ export default {
         charset: 'utf-8'
       },
       // Other Scripts
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', async: true },
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js', async: true },
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js', async: true }
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'},
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js'},
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js'}
     ],
     __dangerouslyDisableSanitizersByTagID: {
       gtag: ['innerHTML']
@@ -108,7 +108,7 @@ export default {
       let hasMoreData = true;
       while (hasMoreData) {
         try {
-          let response = await axios.get(`https://pejuangpemrogaman.appdev.my.id/api/web/posts?page=${page}`);
+          let response = await axios.get(`https://api.pejuangpemrograman.com/api/web/posts?page=${page}`);
           let data = response.data.data.data;
 
           if (data.length === 0) {
@@ -166,7 +166,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://pejuangpemrogaman.appdev.my.id'
+    baseURL: 'https://api.pejuangpemrograman.com'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
