@@ -30,15 +30,11 @@
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-sweetalert2": "^4.2.1",
-    "vue-template-compiler": "^2.7.10",
-    "esm": "^3.2.25"
+    "vue-template-compiler": "^2.7.10"
   },
   "devDependencies": {
     "@nuxt/image": "^0.7.2",
     "@nuxt/typescript-build": "^3.0.2",
-    "@types/nuxtjs__auth": "^4.8.11",
-    "@types/postcss-preset-env": "^8.0.0",
-    "nuxt-purgecss": "^1.0.0",
-    "postcss": "^8.4.38"
+    "@types/nuxtjs__auth": "^4.8.11"
   }
 }
