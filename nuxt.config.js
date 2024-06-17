@@ -205,6 +205,13 @@ export default {
       pages: true,
       commons: true
     },
+    terser: {
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+    },
     transpile: ['bootstrap-vue'],
     babel: {
       compact: true,
