@@ -210,28 +210,14 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend(config, { isDev, isClient }) {
-      // Hanya terapkan konfigurasi untuk produksi
-      if (!isDev && isClient) {
-        // Tambahkan PostCSS plugin
-        config.module.rules.push({
-          enforce: 'post',
-          test: /\.(vue|js|css)$/,
-          loader: 'postcss-loader',
-          options: {
-            sourceMap: false,
-            plugins: [
-              PurgecssPlugin({
-                content: [
-                  './pages/**/*.vue',
-                  './components/**/*.vue',
-                ],
-                defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-              })
-            ]
-          }
-        });
-      }
-    }
-  }
+    postcss: {
+      plugins: {
+        'postcss-preset-env': {
+          stage: 1,
+        },
+        autoprefixer: {},
+        // tambahkan plugin lainnya sesuai kebutuhan
+      },
+    },
+  },
 }
