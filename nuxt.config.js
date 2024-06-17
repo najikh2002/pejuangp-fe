@@ -1,4 +1,5 @@
 const axios = require('axios');
+import shrinkRay from 'shrink-ray-current'
 
 export default {
   // Target Deployment
@@ -30,9 +31,9 @@ export default {
         charset: 'utf-8'
       },
       // Other Scripts
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'},
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js'},
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js'}
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js', async: true },
     ],
     __dangerouslyDisableSanitizersByTagID: {
       gtag: ['innerHTML']
@@ -197,36 +198,51 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    extractCSS: true,
-    optimizeCSS: true,
-    splitChunks: {
-      layouts: true,
-      pages: true,
-      commons: true
-    },
-    terser: {
-      terserOptions: {
-        compress: {
-          drop_console: true,
-        },
-      },
-    },
-    transpile: ['bootstrap-vue'],
-    babel: {
-      compact: true,
-    },
-    extend(config, { isDev, isClient }) {
-      if (!isDev && isClient) {
-        config.optimization.splitChunks.maxSize = 250000;
-      }
-    },
-  },
+  // build: {
+  //   extractCSS: true,
+  //   optimizeCSS: true,
+  //   splitChunks: {
+  //     layouts: true,
+  //     pages: true,
+  //     commons: true
+  //   },
+  //   terser: {
+  //     terserOptions: {
+  //       compress: {
+  //         drop_console: true,
+  //       },
+  //     },
+  //   },
+  //   transpile: ['bootstrap-vue'],
+  //   babel: {
+  //     compact: true,
+  //   },
+  //   middleware: [
+  //     'compression'
+  //   ],
+  //   extend(config, { isDev, isClient }) {
+  //     if (!isDev && isClient) {
+  //       config.optimization.splitChunks.maxSize = 250000;
+  //       config.plugins.push({
+  //         resolve: 'compression-webpack-plugin',
+  //         options: {
+  //           algorithm: require('node-zopfli-es').brotliCompress,
+  //           compressionOptions: { level: 11 },
+  //           filename: '[path].br[query]',
+  //           threshold: 10240,
+  //           minRatio: 0.8
+  //         }
+  //       });
+  //     }
+  //   },
+  // },
+  build: {},
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
         return ['script', 'style', 'font'].includes(type)
       }
-    }
+    },
+    compressor: shrinkRay()
   }
 }
