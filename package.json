@@ -36,6 +36,7 @@
     "@nuxt/image": "^0.7.2",
     "@nuxt/typescript-build": "^3.0.2",
     "@types/nuxtjs__auth": "^4.8.11",
+    "@types/postcss-preset-env": "^8.0.0",
     "nuxt-purgecss": "^1.0.0",
     "postcss": "^8.4.38"
   }
