@@ -236,7 +236,23 @@ export default {
   //     }
   //   },
   // },
-  build: {},
+  build: {
+    extractCSS: true,
+    optimizeCSS: true,
+    splitChunks: {
+      layouts: true,
+      pages: true,
+      commons: true
+    },
+    terser: {
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+    },
+    transpile: ['bootstrap-vue'],
+  },
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
