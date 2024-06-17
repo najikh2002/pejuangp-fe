@@ -30,7 +30,8 @@
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-sweetalert2": "^4.2.1",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "esm": "^3.2.25"
   },
   "devDependencies": {
     "@nuxt/image": "^0.7.2",
