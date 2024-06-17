@@ -87,6 +87,13 @@ export default {
     '@nuxtjs/gtm',
     // nuxtImage
     '@nuxt/image',
+    // nuxt-purge
+    'nuxt-purgecss',
+    // purge css
+    // ['@fullhuman/postcss-purgecss', {
+    //   content: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue'],
+    //   safelist: ['html', 'body']
+    // }]
   ],
 
   robots: {
@@ -169,6 +176,50 @@ export default {
     baseURL: 'https://api.pejuangpemrograman.com'
   },
 
+  // purgecss
+  purgeCSS: {
+    mode: 'postcss', // You can choose 'webpack' or 'postcss' mode
+    enabled: ({ isDev, isClient }) => (!isDev && isClient), // Enable in production mode
+    paths: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js'
+    ],
+    styleExtensions: ['.css'],
+    safelist: ['body', 'html', 'nuxt-progress'],
+    extractors: [
+      {
+        extractor: content => content.match(/[A-z0-9-:\\/]+/g) || [],
+        extensions: ['html', 'vue', 'js']
+      }
+    ]
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    extractCSS: true,
+    optimizeCSS: true,
+    splitChunks: {
+      layouts: true,
+      pages: true,
+      commons: true
+    },
+    transpile: ['bootstrap-vue'],
+    babel: {
+      compact: true,
+    },
+    extend(config, { isDev, isClient }) {
+      if (!isDev && isClient) {
+        config.optimization.splitChunks.maxSize = 250000;
+      }
+    },
+  },
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
+  }
 }
