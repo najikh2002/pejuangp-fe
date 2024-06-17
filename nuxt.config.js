@@ -15,23 +15,7 @@ export default {
       lang: 'en'
     },
     script: [
-      {
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-LPQW2T7W2D',
-        async: true
-      },
-      {
-        hid: 'gtag',
-        innerHTML: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-LPQW2T7W2D');
-        `,
-        type: 'text/javascript',
-        charset: 'utf-8'
-      },
-      // Other Scripts
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', async: true },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', defer: true },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js', async: true },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js', async: true },
     ],
@@ -49,24 +33,19 @@ export default {
     ]
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/fontawesome-free/css/all.min.css',
     '@/assets/css/adminlte.min.css'
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/google-analytics.js', mode: 'client' }
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
@@ -102,12 +81,39 @@ export default {
         },
       },
     ],
-    // purge css
-    // ['@fullhuman/postcss-purgecss', {
-    //   content: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue'],
-    //   safelist: ['html', 'body']
-    // }]
+    // partytown
+    '@nuxtjs/partytown',
   ],
+
+  partytown: {
+    forward: ['dataLayer.push'],
+  },
+  app: {
+    head: {
+      script: [
+        // Insert your Google Tag Manager Script here
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-LPQW2T7W2D',
+          async: true,
+          type: 'text/partytown', // Use Partytown type
+        },
+        {
+          hid: 'gtag',
+          innerHTML: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LPQW2T7W2D');
+          `,
+          type: 'text/partytown', // Use Partytown type
+          charset: 'utf-8',
+        },
+      ],
+      __dangerouslyDisableSanitizersByTagID: {
+        'gtag': ['innerHTML'],
+      },
+    },
+  },
 
   robots: {
     userAgent: '*',
@@ -184,14 +190,10 @@ export default {
     }
   },
 
-
-
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: 'https://api.pejuangpemrograman.com'
   },
-
-
 
   // purgecss
   purgeCSS: {
@@ -214,44 +216,6 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  // build: {
-  //   extractCSS: true,
-  //   optimizeCSS: true,
-  //   splitChunks: {
-  //     layouts: true,
-  //     pages: true,
-  //     commons: true
-  //   },
-  //   terser: {
-  //     terserOptions: {
-  //       compress: {
-  //         drop_console: true,
-  //       },
-  //     },
-  //   },
-  //   transpile: ['bootstrap-vue'],
-  //   babel: {
-  //     compact: true,
-  //   },
-  //   middleware: [
-  //     'compression'
-  //   ],
-  //   extend(config, { isDev, isClient }) {
-  //     if (!isDev && isClient) {
-  //       config.optimization.splitChunks.maxSize = 250000;
-  //       config.plugins.push({
-  //         resolve: 'compression-webpack-plugin',
-  //         options: {
-  //           algorithm: require('node-zopfli-es').brotliCompress,
-  //           compressionOptions: { level: 11 },
-  //           filename: '[path].br[query]',
-  //           threshold: 10240,
-  //           minRatio: 0.8
-  //         }
-  //       });
-  //     }
-  //   },
-  // },
   build: {
     extractCSS: true,
     optimizeCSS: true,

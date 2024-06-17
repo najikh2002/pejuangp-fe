@@ -39,6 +39,7 @@
     "@fullhuman/postcss-purgecss": "^6.0.0",
     "@nuxt/image": "^0.7.2",
     "@nuxt/typescript-build": "^3.0.2",
+    "@nuxtjs/partytown": "^1.5.0",
     "@types/nuxtjs__auth": "^4.8.11",
     "nuxt-compress": "^5.0.0",
     "nuxt-purgecss": "^2.0.0"

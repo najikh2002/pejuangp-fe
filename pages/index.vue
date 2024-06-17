@@ -110,7 +110,8 @@
 </template>
 
 <script>
-import Slider from "~/components/web/slider.vue";
+// import Slider from "~/components/web/slider.vue";
+const Slider = () => import("~/components/web/slider.vue");
 
 export default {
   components: {
