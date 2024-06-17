@@ -203,12 +203,6 @@ export default {
     ]
   },
 
-  nitro: {
-    compressPublicAssets: {
-      brotli: true,
-    },
-  },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   // build: {
   //   extractCSS: true,
