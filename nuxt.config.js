@@ -1,5 +1,5 @@
 const axios = require('axios');
-import PurgecssPlugin from '@fullhuman/postcss-purgecss';
+const PurgecssPlugin = require('@fullhuman/postcss-purgecss');
 
 export default {
   // Target Deployment
