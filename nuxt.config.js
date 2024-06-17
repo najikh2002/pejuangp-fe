@@ -1,4 +1,5 @@
-const axios = require('axios')
+const axios = require('axios');
+import PurgecssPlugin from '@fullhuman/postcss-purgecss';
 
 export default {
   // Target Deployment
@@ -86,7 +87,9 @@ export default {
     // google tag manager
     '@nuxtjs/gtm',
     // nuxtImage
-    '@nuxt/image'
+    '@nuxt/image',
+    // nuxt purge
+
   ],
 
   robots: {
@@ -164,11 +167,71 @@ export default {
     }
   },
 
+  purgeCSS: {
+    enabled: true,
+    paths: [
+      'pages/**/*.vue',
+      'components/**/*.vue'
+    ],
+    styleExtensions: ['.css'],
+    whitelistPatterns: [
+      /^b-container$/,
+      /^b-row$/,
+      /^b-col$/,
+      /^b-card$/,
+      /^btn$/,
+      /^btn-primary$/,
+      /^mb-[0-9]+$/,
+      /^mr-[0-9]+$/,
+      /^text-(dark|muted)$/,
+      /^text-center$/,
+      /^nuxt-link$/,
+      /^nuxt-img$/,
+      /^Slider$/,
+    ],
+    whitelistPatternsChildren: [
+      /^b-card-body$/,
+      /^g-[0-9]+$/,
+    ],
+    extractors: [
+      {
+        extractor(content) {
+          return content.match(/[A-Za-z0-9-_:/]+/g) || [];
+        },
+        extensions: ['html', 'vue', 'js']
+      }
+    ]
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: 'https://api.pejuangpemrograman.com'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    extend(config, { isDev, isClient }) {
+      // Hanya terapkan konfigurasi untuk produksi
+      if (!isDev && isClient) {
+        // Tambahkan PostCSS plugin
+        config.module.rules.push({
+          enforce: 'post',
+          test: /\.(vue|js|css)$/,
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: false,
+            plugins: [
+              PurgecssPlugin({
+                content: [
+                  './pages/**/*.vue',
+                  './components/**/*.vue',
+                ],
+                defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
+              })
+            ]
+          }
+        });
+      }
+    }
+  }
 }
