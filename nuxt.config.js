@@ -90,6 +90,8 @@ export default {
     '@nuxt/image',
     // nuxt-purge
     'nuxt-purgecss',
+    // precompress
+    'nuxt-precompress',
     // purge css
     // ['@fullhuman/postcss-purgecss', {
     //   content: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue'],
@@ -172,10 +174,14 @@ export default {
     }
   },
 
+
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: 'https://api.pejuangpemrograman.com'
   },
+
+
 
   // purgecss
   purgeCSS: {
@@ -195,6 +201,12 @@ export default {
         extensions: ['html', 'vue', 'js']
       }
     ]
+  },
+
+  nitro: {
+    compressPublicAssets: {
+      brotli: true,
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -253,6 +265,41 @@ export default {
     },
     transpile: ['bootstrap-vue'],
   },
+
+  nuxtPrecompress: {
+    enabled: true, // Enable in production
+    report: true, // set false to turn off console messages
+    test: /\.(js|css|html|txt|xml|svg)$/, // files to compress on build
+    // Serving options
+    middleware: {
+      // You can disable middleware if you serve static files using nginx...
+      enabled: true,
+      // if try to serv precompress files from static as well
+      // newither webpack or this module will compress it
+      enabledStatic: true,
+      // Priority of content-encodings, firtst try to serve br, then gzip
+      orderPreference: ['br', 'gzip'],
+    },
+
+    // build time compression settings
+    gzip: {
+      // should compress to gzpi?
+      enabled: true,
+      filename: '[path].gz[query]',
+      threshold: 10240,
+      minRatio: 0.8,
+    },
+    brotli: {
+      // should compress to brotli?
+      enabled: true,
+      filename: '[path].br[query]',
+      algorithm: 'brotliCompress',
+      compressionOptions: { level: 11 },
+      threshold: 10240,
+      minRatio: 0.8,
+    },
+  },
+
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
