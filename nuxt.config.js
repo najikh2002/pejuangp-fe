@@ -86,6 +86,7 @@ export default {
   ],
 
   partytown: {
+    sandbox: false,
     forward: ['dataLayer.push'],
   },
   app: {
@@ -106,7 +107,6 @@ export default {
             gtag('config', 'G-LPQW2T7W2D');
           `,
           type: 'text/partytown', // Use Partytown type
-          charset: 'utf-8',
         },
       ],
       __dangerouslyDisableSanitizersByTagID: {
